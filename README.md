@@ -57,7 +57,8 @@ Example:
 - Includes charts for spike multiplier, recent mentions, sentiment distribution, and engagement
 - Includes a viral alerts table with topic-level metrics
 - Includes Reddit API-ready structure for future live data collection
-- Includes future-ready structure for Kafka streaming, Slack alerts, and deployment
+- Generates Slack-style viral alert messages for detected trending topics
+- Includes future-ready structure for Kafka streaming, real Slack webhooks, and deployment
 
 ---
 
@@ -136,6 +137,7 @@ The dashboard shows:
 - **Plotly** — Interactive visualizations
 - **Dash** — Dashboard web application framework
 - **python-dotenv** — Environment variable management
+- **Slack-style Alert Simulation** — Generates alert messages for viral topics
 
 ---
 
@@ -255,6 +257,7 @@ After running the pipeline, the following files are created:
     data/raw/reddit_posts.csv
     data/processed/enriched_posts.csv
     data/processed/viral_alerts.csv
+    data/processed/slack_alerts.txt
 
 ---
 

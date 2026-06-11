@@ -5,6 +5,7 @@ steps = [
     ("Generating sample Reddit-style posts", "python scripts/generate_sample_posts.py"),
     ("Running sentiment analysis", "python -m viralradar.consumers.sentiment_analyzer"),
     ("Running viral spike detection", "python -m viralradar.detectors.spike_detector"),
+    ("Generating Slack-style viral alerts", "python -m viralradar.utils.slack_alert"),
 ]
 
 
@@ -23,4 +24,5 @@ if __name__ == "__main__":
         run_step(description, command)
 
     print("\nViralRadar pipeline completed successfully!")
-    print("Run dashboard with: python -m dashboard.app")
+    print("Dashboard: python -m dashboard.app")
+    print("Slack-style alerts: data/processed/slack_alerts.txt")
