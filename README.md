@@ -45,7 +45,7 @@ Example:
 
 - Generates Reddit-style social media post data
 - Processes post titles, topics, subreddit names, scores, comments, upvote ratios, timestamps, and URLs
-- Performs NLP-based sentiment analysis using VADER
+- Performs NLP-based sentiment analysis using Hugging Face Transformers with VADER fallback
 - Classifies each post as positive, neutral, or negative
 - Detects abnormal topic spikes using sliding-window analytics
 - Compares recent topic activity with baseline activity
@@ -133,7 +133,8 @@ The dashboard shows:
 - **Python** — Core programming language
 - **Pandas** — Data processing and analysis
 - **NumPy** — Numerical operations
-- **VADER Sentiment** — Lightweight NLP sentiment analysis
+- **Hugging Face Transformers** — Transformer-based sentiment analysis
+- **VADER Sentiment** — Fallback lightweight NLP sentiment analysis
 - **Plotly** — Interactive visualizations
 - **Dash** — Dashboard web application framework
 - **python-dotenv** — Environment variable management
@@ -145,7 +146,6 @@ The dashboard shows:
 
 - **Reddit API using PRAW** — Collect live Reddit posts
 - **Apache Kafka** — Stream posts in real time
-- **Hugging Face Transformers** — Add advanced sentiment classification
 - **Slack Webhooks** — Send alerts when viral spikes are detected
 - **PostgreSQL** — Store historical trend and alert data
 - **Docker** — Containerize the application
@@ -277,7 +277,7 @@ For the current MVP, the threshold is set lower for demo purposes so viral alert
 
 ## 🧪 Sentiment Analysis
 
-ViralRadar uses VADER Sentiment Analysis to classify post titles as:
+ViralRadar uses Hugging Face Transformers for sentiment analysis, with VADER as a fallback option. Post titles are classified as:
 
     positive
     neutral
@@ -341,7 +341,6 @@ The `.gitignore` file excludes `.env` to protect private credentials.
 
 - Connect live Reddit API data
 - Add Apache Kafka for real-time streaming
-- Add Hugging Face transformer-based sentiment analysis
 - Add Slack alerts for viral spikes
 - Store historical data in PostgreSQL
 - Add Docker Compose setup
