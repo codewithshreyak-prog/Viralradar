@@ -1,0 +1,10 @@
+pandas
+numpy
+plotly
+dash
+python-dotenv
+praw
+kafka-python
+vaderSentiment
+slack-sdk
+pytest
