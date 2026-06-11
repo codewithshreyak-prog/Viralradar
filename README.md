@@ -346,14 +346,6 @@ The `.gitignore` file excludes `.env` to protect private credentials.
 
 ---
 
-## 💼 Resume Highlight
-
-Built **ViralRadar**, a viral trend detection dashboard that analyzes Reddit-style social media data, performs NLP-based sentiment analysis, detects abnormal topic spikes using sliding-window analytics, and visualizes viral alerts through an interactive Plotly Dash dashboard.
-
----
-
-
-
 ## ⭐ Project Status
 
 Current version: **MVP Complete**
