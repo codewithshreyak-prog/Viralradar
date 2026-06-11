@@ -1,0 +1,6 @@
+services:
+  kafka:
+    image: apache/kafka-native:latest
+    container_name: viralradar-kafka
+    ports:
+      - "9092:9092"

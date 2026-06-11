@@ -58,7 +58,8 @@ Example:
 - Includes a viral alerts table with topic-level metrics
 - Includes Reddit API-ready structure for future live data collection
 - Generates Slack-style viral alert messages for detected trending topics
-- Includes future-ready structure for Kafka streaming, real Slack webhooks, and deployment
+- Streams Reddit-style posts through Apache Kafka using a producer-consumer workflow
+- Includes future-ready structure for real Slack webhooks and deployment
 
 ---
 
@@ -139,13 +140,15 @@ The dashboard shows:
 - **Dash** — Dashboard web application framework
 - **python-dotenv** — Environment variable management
 - **Slack-style Alert Simulation** — Generates alert messages for viral topics
+- **Apache Kafka** — Streams Reddit-style posts through a producer-consumer pipeline
+- **Docker Compose** — Runs Kafka locally in a container
+- **kafka-python** — Python client for Kafka producer and consumer
 
 ---
 
 ## 🔮 Planned Enhancements
 
 - **Reddit API using PRAW** — Collect live Reddit posts
-- **Apache Kafka** — Stream posts in real time
 - **Slack Webhooks** — Send alerts when viral spikes are detected
 - **PostgreSQL** — Store historical trend and alert data
 - **Docker** — Containerize the application
@@ -202,6 +205,7 @@ The dashboard shows:
     │
     ├── .env.example
     ├── .gitignore
+    ├── docker-compose.yml
     ├── requirements.txt
     └── README.md
 
@@ -258,6 +262,7 @@ After running the pipeline, the following files are created:
     data/processed/enriched_posts.csv
     data/processed/viral_alerts.csv
     data/processed/slack_alerts.txt
+    data/processed/kafka_stream_log.jsonl
 
 ---
 
@@ -337,10 +342,45 @@ The `.gitignore` file excludes `.env` to protect private credentials.
 
 ---
 
+## 🔄 Kafka Streaming Demo
+
+ViralRadar includes a Kafka-based streaming demo to simulate real-time social media post flow.
+
+The Kafka producer reads generated Reddit-style posts from:
+
+    data/raw/reddit_posts.csv
+
+Then it streams each post into the Kafka topic:
+
+    reddit-posts
+
+The Kafka consumer reads messages from the topic and saves them into:
+
+    data/processed/kafka_stream_log.jsonl
+
+Start Kafka with Docker Compose:
+
+    docker compose up -d
+
+Run the Kafka producer:
+
+    python -m viralradar.producers.kafka_producer
+
+Run the Kafka consumer:
+
+    python -m viralradar.consumers.kafka_consumer
+
+Stop Kafka:
+
+    docker compose down
+
+This proves the project can support real-time streaming architecture instead of only batch CSV processing.
+
+---
+
 ## 🚀 Future Roadmap
 
 - Connect live Reddit API data
-- Add Apache Kafka for real-time streaming
 - Add Slack alerts for viral spikes
 - Store historical data in PostgreSQL
 - Add Docker Compose setup
