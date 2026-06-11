@@ -105,7 +105,9 @@ Finally, the dashboard visualizes the results using KPI cards, bar charts, pie c
 
 ## 📊 Dashboard Preview
 
-![ViralRadar Dashboard](screenshots/dashboard_preview.png)
+![ViralRadar Dashboard Overview](screenshots/dashboard_1.png)
+
+![ViralRadar Dashboard Analytics](screenshots/dashboard_2.png)
 
 ---
 
