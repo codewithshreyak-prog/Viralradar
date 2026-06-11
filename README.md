@@ -1,4 +1,4 @@
-cat > README.md << 'EOF'
+
 # 📡 ViralRadar
 
 **ViralRadar** is a viral trend detection dashboard that identifies fast-rising social media topics before they gain massive attention.
